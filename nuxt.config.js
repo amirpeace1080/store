@@ -34,6 +34,27 @@ export default {
     '@nuxtjs/bulma',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+
+    [
+      'nuxt-i18n',
+      {
+        locales: ['fa', 'en'],
+        defaultLocale: 'fa',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: {
+              zaban_fa: 'persian',
+              zaban_en: 'english'
+            },
+            fa: {
+              zaban_fa: 'فارسی',
+              zaban_en: 'انگلیسی',
+            }
+          }
+        }
+      }
+    ]
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
