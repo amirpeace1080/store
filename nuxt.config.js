@@ -9,7 +9,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', link: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' }
+      { rel: 'stylesheet', link: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
+      { rel:'stylesheet', href:'https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v[X.Y.Z]/dist/font-face.css' }
     ]
   },
 
@@ -45,11 +46,15 @@ export default {
           messages: {
             en: {
               zaban_fa: 'persian',
-              zaban_en: 'english'
+              zaban_en: 'english',
+              home: 'Home',
+              product: 'Products',
             },
             fa: {
               zaban_fa: 'فارسی',
               zaban_en: 'انگلیسی',
+              home: 'خانه',
+              product: 'محصولات'
             }
           }
         }

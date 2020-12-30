@@ -58,9 +58,12 @@
         >
           <nav class="navbar-end">
             <nuxt-link to="/">
-              <a class="navbar-item">Home</a>
+              <a class="navbar-item">{{ $t('home') }}</a>
             </nuxt-link>
-            <a href="#" class="navbar-item">Blog</a>
+            
+            <nuxt-link to="/products">
+              <a class="navbar-item"> {{ $t('product')}} </a>
+            </nuxt-link>
           </nav>
         </div>
       </div>
