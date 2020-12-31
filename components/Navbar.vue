@@ -57,11 +57,11 @@
           dir="rtl"
         >
           <nav class="navbar-end">
-            <nuxt-link to="/">
+            <nuxt-link :to="localePath('/')">
               <a class="navbar-item">{{ $t('home') }}</a>
             </nuxt-link>
             
-            <nuxt-link to="/products">
+            <nuxt-link :to="localePath('/products')">
               <a class="navbar-item"> {{ $t('product')}} </a>
             </nuxt-link>
           </nav>
