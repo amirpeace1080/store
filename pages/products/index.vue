@@ -2,19 +2,12 @@
   <div class="products-page">
     <div class="container" dir="ltr">
       <h1>{{ this.$store.state.products[0] }}</h1>
-      <span class="has-text-centered">
-        <i class="fa fa-car"></i>
-      </span>
     </div>
 
     <!-- start loading -->
-    <!-- <div
-      v-if="loading"
-      class="fixed flex justify-center items-center top-0 left-0 right-0 z-50 h-screen w-screen"
-      style="background: rgba(0, 0, 0, 0)"
-    >
-      <i class="fas fa-spinner fa-pulse"></i>
-    </div> -->
+    <div class="has-text-centered" v-if="loading">
+      <i class="fa fa-spinner fa-pulse fa-5x"></i>
+    </div>
     <!-- end loading -->
 
 
@@ -63,11 +56,13 @@ export default {
   name: 'products',
   data() {
     return {
-      loading: true,
+      loading: false,
     }
   },
   mounted() {
+    this.loading = true;
     this.$store.dispatch('product').then((resp) => {
+      this.loading = false
       resp.data
     })
   },
