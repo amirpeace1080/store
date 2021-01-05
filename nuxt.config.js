@@ -1,4 +1,5 @@
 export default {
+  mode: 'spa',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'store',
@@ -10,7 +11,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', link: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
-      { rel:'stylesheet', href:'https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v[X.Y.Z]/dist/font-face.css' }
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v[X.Y.Z]/dist/font-face.css' }
     ]
   },
 
@@ -36,31 +37,30 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
 
-    [
-      'nuxt-i18n',
-      {
-        locales: ['fa', 'en'],
-        defaultLocale: 'fa',
-        vueI18n: {
-          fallbackLocale: 'en',
-          messages: {
-            en: {
-              zaban_fa: 'persian',
-              zaban_en: 'english',
-              home: 'Home',
-              product: 'Products',
-            },
-            fa: {
-              zaban_fa: 'فارسی',
-              zaban_en: 'انگلیسی',
-              home: 'خانه',
-              product: 'محصولات'
-            }
-          }
+    'nuxt-i18n',
+  ],
+
+  i18n: {
+    locales: ['fa', 'en'],
+    defaultLocale: 'fa',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          zaban_fa: 'persian',
+          zaban_en: 'english',
+          home: 'Home',
+          product: 'Products',
+        },
+        fa: {
+          zaban_fa: 'فارسی',
+          zaban_en: 'انگلیسی',
+          home: 'خانه',
+          product: 'محصولات'
         }
       }
-    ]
-  ],
+    }
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
