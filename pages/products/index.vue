@@ -2,7 +2,21 @@
   <div class="products-page">
     <div class="container" dir="ltr">
       <h1>{{ this.$store.state.products[0] }}</h1>
+      <span class="has-text-centered">
+        <i class="fa fa-car"></i>
+      </span>
     </div>
+
+    <!-- start loading -->
+    <!-- <div
+      v-if="loading"
+      class="fixed flex justify-center items-center top-0 left-0 right-0 z-50 h-screen w-screen"
+      style="background: rgba(0, 0, 0, 0)"
+    >
+      <i class="fas fa-spinner fa-pulse"></i>
+    </div> -->
+    <!-- end loading -->
+
 
     <!-- <body> -->
     <section class="section is-small" dir="rtl">
@@ -16,21 +30,20 @@
             <div class="card card-equal-height">
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <img
-                    :src="product.image"
-                    alt="a random image"
-                  />
+                  <img :src="product.image" alt="a random image" />
                 </figure>
               </div>
               <div class="card-content">
                 <p class="title has-text-centered">{{ product.title }}</p>
                 <div class="content">
-                  <p> {{ product.description }} </p>
+                  <p>{{ product.description }}</p>
                 </div>
               </div>
               <div class="card-footer">
                 <p class="card-footer-item">
-                  <span>category <a href="#"> {{ product.category }} </a></span>
+                  <span
+                    >category <a href="#"> {{ product.category }} </a></span
+                  >
                 </p>
                 <p class="card-footer-item">
                   <span>more <a href="#"> about</a></span>
@@ -49,7 +62,9 @@
 export default {
   name: 'products',
   data() {
-    return {}
+    return {
+      loading: true,
+    }
   },
   mounted() {
     this.$store.dispatch('product').then((resp) => {
