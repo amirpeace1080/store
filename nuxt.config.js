@@ -51,12 +51,20 @@ export default {
           zaban_en: 'english',
           home: 'Home',
           product: 'Products',
+          add_cart: 'Add To Cart',
+          show_detail: 'Details',
+          product_name: 'Product Name',
+          product_category: 'Category'
         },
         fa: {
           zaban_fa: 'فارسی',
           zaban_en: 'انگلیسی',
           home: 'خانه',
-          product: 'محصولات'
+          product: 'محصولات',
+          add_cart: 'اضافه کردن به سبد',
+          show_detail: 'مشاهده',
+          product_name: 'نام محصول',
+          product_category: 'دسته بندی',
         }
       }
     }
