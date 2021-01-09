@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1> Title : {{ this.$route.params }} </h1>
     <div class="container product-detail box" style="margin: 3%">
       <br />
       <div class="columns">
@@ -51,21 +52,7 @@ export default {
   name: 'details',
   data() {
     return {
-      id: '',
-      image: '',
-      title: '',
-      description: '',
-      price: '',
-      category: '',
     }
-  },
-  mounted() {
-    this.id = this.$route.query.id
-    this.image = this.$route.query.image
-    this.title = this.$route.query.title
-    this.description = this.$route.query.description
-    this.price = this.$route.query.price
-    this.category = this.$route.query.category
   },
 }
 </script>

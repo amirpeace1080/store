@@ -19,7 +19,7 @@
             v-for="(product, index) in this.$store.state.products"
             :key="index"
           >
-            <nuxt-link to="">
+            <div>
               <div class="card card-equal-height">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -44,28 +44,14 @@
                   </p>
                   <p class="card-footer-item">
                     <!-- start show -->
-                    <nuxt-link
-                      :to="
-                        localePath({
-                          path: 'products/details/',
-                          query: {
-                            id: product.id,
-                            image: product.image,
-                            title: product.title,
-                            description: product.description,
-                            price: product.price,
-                            category: product.category,
-                          },
-                        })
-                      "
-                    >
+                    <a @click="aa(product.id)">
                       <span> {{ $t('show_detail') }} </span>
-                    </nuxt-link>
+                    </a>
                     <!-- end show -->
                   </p>
                 </div>
               </div>
-            </nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -88,6 +74,11 @@ export default {
       this.loading = false
       resp.data
     })
+  },
+  methods: {
+    aa(id){
+      this.$router.push(`products/${id}`)
+    }
   },
 }
 </script>
