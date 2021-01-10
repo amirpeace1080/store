@@ -23,6 +23,20 @@ export default () => {
                             console.log(err, statusProduct);
                         })
                 })
+            },
+            getProduct({commit}, {id}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios({
+                        url: `https://fakestoreapi.com/products/${id}`
+                    })
+                    .then((resp)=>{
+                        commit('SET_PRODUCT', resp.data)
+                        resolve()
+                    })
+                    .catch((err)=>{
+                        console.log(err, statusGetProduct);
+                    })
+                })
             }
         },
         getters: {}

@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1> Title : {{ this.$route.params }} </h1>
+    <h1 class="has-text-info"> Show : {{ show }} </h1>
     <div class="container product-detail box" style="margin: 3%">
       <br />
       <div class="columns">
@@ -52,7 +53,11 @@ export default {
   name: 'details',
   data() {
     return {
+      show: []
     }
+  },
+  mounted() {
+    this.show = this.$store.dispatch('getProduct', {id: this.$route.params.id})
   },
 }
 </script>
