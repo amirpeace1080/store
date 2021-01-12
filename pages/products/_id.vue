@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h1> Title : {{ this.$route.params }} </h1>
-    <h1 class="has-text-info"> Show : {{ show }} </h1>
     <div class="container product-detail box" style="margin: 3%">
       <br />
       <div class="columns">
@@ -11,7 +9,7 @@
 
         <div class="column is-5-desktop is-5-tablet is-12-mobile">
           <img
-            :src="image"
+            :src="this.$store.state.productItem.image"
             alt="image"
             style="max-height: 500px"
           />
@@ -22,23 +20,23 @@
         >
           <dt style="font-size: 1.5em; text-transform: uppercase">
             <span class="is-pulled-right" style="font-size: 16px"> : {{ $t('product_name') }} </span>
-            {{ title }}
+            {{ this.$store.state.productItem.title }}
           </dt>
           <span class="is-pulled-right" style="font-size: 16px"> : {{ $t('product_category') }} </span>
-          <dt style="font-size: 1.2em; text-transform: uppercase">{{category}}</dt>
+          <dt style="font-size: 1.2em; text-transform: uppercase">{{this.$store.state.productItem.category}}</dt>
           <hr />
           <div class="price">
             <label for="price">$ </label>
-            <span>{{price}}</span>
+            <span>{{this.$store.state.productItem.price}}</span>
             <br /><br />
           </div>
 
           <p style="font-size: 1.2em">
-            {{ description }}
+            {{ this.$store.state.productItem.description }}
           </p>
           <hr />
-          <button class="button is-full is-warning">Add to Cart</button>
-          <button class="button is-full is-primary">Buy Now</button>
+          <button class="button is-full is-warning"> {{ $t('add_to_cart') }} </button>
+          <button class="button is-full is-primary"> {{ $t('buy_now') }} </button>
           <div
             class="column is-hidden-desktop is-1-tablet is-hidden-mobile"
           ></div>
@@ -53,11 +51,11 @@ export default {
   name: 'details',
   data() {
     return {
-      show: []
+      //
     }
   },
   mounted() {
-    this.show = this.$store.dispatch('getProduct', {id: this.$route.params.id})
+    this.$store.dispatch('productItem', {id: this.$route.params.id})
   },
 }
 </script>

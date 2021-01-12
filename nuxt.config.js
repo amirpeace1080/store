@@ -54,7 +54,9 @@ export default {
           add_cart: 'Add To Cart',
           show_detail: 'Details',
           product_name: 'Product Name',
-          product_category: 'Category'
+          product_category: 'Category',
+          add_to_cart: 'Add to Cart',
+          buy_now: 'Buy Now',
         },
         fa: {
           zaban_fa: 'فارسی',
@@ -65,6 +67,8 @@ export default {
           show_detail: 'مشاهده',
           product_name: 'نام محصول',
           product_category: 'دسته بندی',
+          add_to_cart: 'اضافه کردن به سبد',
+          buy_now: 'خرید',
         }
       }
     }

@@ -44,9 +44,9 @@
                   </p>
                   <p class="card-footer-item">
                     <!-- start show -->
-                    <a @click="aa(product.id)">
+                    <nuxt-link :to="{path: `/products/${product.id}`}">
                       <span> {{ $t('show_detail') }} </span>
-                    </a>
+                    </nuxt-link>
                     <!-- end show -->
                   </p>
                 </div>
@@ -74,11 +74,6 @@ export default {
       this.loading = false
       resp.data
     })
-  },
-  methods: {
-    aa(id){
-      this.$router.push(`products/${id}`)
-    }
   },
 }
 </script>

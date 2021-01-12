@@ -4,11 +4,15 @@ import Promise from 'core-js/features/promise'
 export default () => {
     return new vuex.Store({
         state: {
-            products: []
+            products: [],
+            productItem: [],
         },
         mutations: {
             SET_PRODUCT(state, products) {
                 state.products = products
+            },
+            SET_PRODUCTITEM(state, productItem){
+                state.productItem = productItem
             }
         },
         actions: {
@@ -24,13 +28,13 @@ export default () => {
                         })
                 })
             },
-            getProduct({commit}, {id}){
+            productItem({commit}, {id}){
                 return new Promise((resolve, reject) =>{
                     this.$axios({
                         url: `https://fakestoreapi.com/products/${id}`
                     })
                     .then((resp)=>{
-                        commit('SET_PRODUCT', resp.data)
+                        commit('SET_PRODUCTITEM', resp.data)
                         resolve()
                     })
                     .catch((err)=>{
