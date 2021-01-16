@@ -21,5 +21,6 @@ export default {
 html,
 body{
   font-family: 'Vazir', sans-serif;
+  /* background: url("https://papers.co/wallpaper/papers.co-vk55-android-lollipop-material-design-pattern-36-3840x2400-4k-wallpaper.jpg"); */
 }
 </style>

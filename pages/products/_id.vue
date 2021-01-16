@@ -1,5 +1,10 @@
 <template>
   <div>
+    <!-- start loading -->
+    <div class="has-text-centered" v-if="loading">
+      <i class="fa fa-spinner fa-pulse fa-5x"></i>
+    </div>
+    <!-- end loading -->
     <div class="container product-detail box" style="margin: 3%">
       <br />
       <div class="columns">
@@ -51,11 +56,15 @@ export default {
   name: 'details',
   data() {
     return {
-      //
+      loading: false
     }
   },
   mounted() {
-    this.$store.dispatch('productItem', {id: this.$route.params.id})
+    this.loading = true
+    this.$store.dispatch('productItem', {id: this.$route.params.id}).then((resp)=>{
+      this.loading = false
+      resp.data
+    })
   },
 }
 </script>

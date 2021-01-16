@@ -6,6 +6,8 @@ export default () => {
         state: {
             products: [],
             productItem: [],
+            users: [],
+            userItem: []
         },
         mutations: {
             SET_PRODUCT(state, products) {
@@ -13,6 +15,12 @@ export default () => {
             },
             SET_PRODUCTITEM(state, productItem){
                 state.productItem = productItem
+            },
+            SET_USER(state, users){
+                state.users = users
+            },
+            SET_USERITEM(state, userItem){
+                state.userItem = userItem
             }
         },
         actions: {
@@ -28,6 +36,7 @@ export default () => {
                         })
                 })
             },
+
             productItem({commit}, {id}){
                 return new Promise((resolve, reject) =>{
                     this.$axios({
@@ -39,6 +48,36 @@ export default () => {
                     })
                     .catch((err)=>{
                         console.log(err, statusGetProduct);
+                    })
+                })
+            },
+            
+            users({commit}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios({
+                        url: 'https://fakestoreapi.com/users'
+                    })
+                    .then((resp)=>{
+                        commit("SET_USER", resp.data)
+                        resolve()
+                    })
+                    .catch((err) =>{
+                        console.log(err, statusUsers);
+                    })
+                })
+            },
+
+            userItem({commit}, {id}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios({
+                        url: `https://fakestoreapi.com/users/${id}`
+                    })
+                    .then((resp)=>{
+                        commit("SET_USERITEM", resp.data)
+                        resolve()
+                    })
+                    .catch((err)=>{
+                        console.log(err, statusUserItem);
                     })
                 })
             }

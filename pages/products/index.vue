@@ -1,7 +1,7 @@
 <template>
   <div class="products-page">
     <div class="container" dir="ltr">
-      <h1>{{ this.$store.state.products[0] }}</h1>
+      <!-- <h1>{{ this.$store.state.products[0] }}</h1> -->
     </div>
 
     <!-- start loading -->
@@ -44,7 +44,7 @@
                   </p>
                   <p class="card-footer-item">
                     <!-- start show -->
-                    <nuxt-link :to="{path: `/products/${product.id}`}">
+                    <nuxt-link :to="localePath({path: `/products/${product.id}`})">
                       <span> {{ $t('show_detail') }} </span>
                     </nuxt-link>
                     <!-- end show -->

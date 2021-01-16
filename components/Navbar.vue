@@ -60,14 +60,19 @@
             <nuxt-link :to="localePath('/')">
               <a class="navbar-item">{{ $t('home') }}</a>
             </nuxt-link>
-            
+
             <nuxt-link :to="localePath('/products')">
-              <a class="navbar-item"> {{ $t('product')}} </a>
+              <a class="navbar-item"> {{ $t('product') }} </a>
+            </nuxt-link>
+
+            <nuxt-link :to="localePath('/users')">
+              <a class="navbar-item"> {{ $t('users') }} </a>
             </nuxt-link>
           </nav>
         </div>
       </div>
     </header>
+    <hr />
   </div>
 </template>
 
@@ -85,18 +90,26 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.navbar
-  height: 4rem
+<style lang="scss" scoped>
+.navbar-component{
+  height: 70px;
+}
 
-  .navbar-brand
-    .navbar-burger
-      height: 4.25rem
+.navbar {
+  height: 4rem;
 
-      span
-        border-radius: 6px
+  .navbar-brand {
+    .navbar-burger {
+      height: 4.25rem;
 
-  .navbar-item
-    padding-top: 1rem
-    padding-bottom: 1rem
+      span {
+        border-radius: 6px;
+      }
+    }
+  }
+  .navbar-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
 </style>
