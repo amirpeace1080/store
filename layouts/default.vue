@@ -4,15 +4,18 @@
     <div class="mr-2 mt-5">
       <Nuxt />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer'
 
 export default {
   components: {
     Navbar,
+    Footer
   },
 }
 </script>

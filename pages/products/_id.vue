@@ -2,7 +2,12 @@
   <div>
     <!-- start loading -->
     <div class="has-text-centered" v-if="loading">
-      <i class="fa fa-spinner fa-pulse fa-5x"></i>
+      <div class="thecube">
+        <div class="cube c1"></div>
+        <div class="cube c2"></div>
+        <div class="cube c4"></div>
+        <div class="cube c3"></div>
+      </div>
     </div>
     <!-- end loading -->
     <div class="container product-detail box" style="margin: 3%">

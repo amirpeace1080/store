@@ -7,7 +7,8 @@ export default () => {
             products: [],
             productItem: [],
             users: [],
-            userItem: []
+            userItem: [],
+            carts: []
         },
         mutations: {
             SET_PRODUCT(state, products) {
@@ -21,6 +22,9 @@ export default () => {
             },
             SET_USERITEM(state, userItem){
                 state.userItem = userItem
+            },
+            SET_CARTS(state, carts){
+                state.carts = carts
             }
         },
         actions: {
@@ -80,7 +84,8 @@ export default () => {
                         console.log(err, statusUserItem);
                     })
                 })
-            }
+            },
+            
         },
         getters: {}
     })

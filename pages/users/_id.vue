@@ -1,10 +1,15 @@
 <template>
   <div class="container mb-4">
-    <h1 dir="ltr">{{ this.$store.state.userItem }}</h1>
+    <!-- <h1 dir="ltr">{{ this.$store.state.userItem }}</h1> -->
 
     <!-- start loading -->
     <div class="has-text-centered" v-if="loading">
-      <i class="fa fa-spinner fa-pulse fa-5x"></i>
+      <div class="thecube">
+        <div class="cube c1"></div>
+        <div class="cube c2"></div>
+        <div class="cube c4"></div>
+        <div class="cube c3"></div>
+      </div>
     </div>
     <!-- end loading -->
 

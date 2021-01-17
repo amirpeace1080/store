@@ -17,6 +17,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    './assets/css/style.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -70,6 +71,11 @@ export default {
           email: 'Email',
           password: 'Password',
           phone: 'Phone',
+          welcom_site: 'Welcom To Site',
+          lorem: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia perspiciatis aut, possimus quos velit laboriosam accusantium maxime? Asperiores distinctio quidem impedit iure! Odio, assumenda! Iusto iure eum reiciendis perferendis quisquam?',
+          ok: 'Ok',
+          click_to_view: 'click to view',
+          recent_popular_products: 'Recent popular products'
         },
         fa: {
           zaban_fa: 'فارسی',
@@ -95,6 +101,11 @@ export default {
           email: 'ایمیل',
           password: 'گذر واژه',
           phone: 'شماره تلفن',
+          welcom_site: 'درود! خوش اومدین!',
+          lorem: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.',
+          ok: 'خب باشه',
+          click_to_view: 'برای نمایش کلیک کنید',
+          recent_popular_products: 'محصولات پربازدید اخیر'
         }
       }
     }

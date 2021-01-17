@@ -1,12 +1,17 @@
 <template>
   <div class="container">
-    <div class="container">
+    <!-- <div class="container">
       <h1 dir="ltr">{{ this.$store.state.users[0] }}</h1>
-    </div>
+    </div> -->
 
     <!-- start loading -->
     <div class="has-text-centered" v-if="loading">
-      <i class="fa fa-spinner fa-pulse fa-5x"></i>
+      <div class="thecube">
+        <div class="cube c1"></div>
+        <div class="cube c2"></div>
+        <div class="cube c4"></div>
+        <div class="cube c3"></div>
+      </div>
     </div>
     <!-- end loading -->
 
@@ -33,13 +38,21 @@
                 {{ user && user.name && user.name.lastname }}
               </p>
               <div class="grid-container">
-                <div class="grid-child-posts">{{ $t('city') }} : {{user&&user.address&&user.address.city}} </div>
+                <div class="grid-child-posts">
+                  {{ $t('city') }} :
+                  {{ user && user.address && user.address.city }}
+                </div>
 
-                <div class="grid-child-followers">{{$t('street')}} : {{user&&user.address&&user.address.street}} </div>
+                <div class="grid-child-followers">
+                  {{ $t('street') }} :
+                  {{ user && user.address && user.address.street }}
+                </div>
               </div>
               <ul class="social-icons">
                 <li>
-                  <a :href="`https://gmail.com/${user.email}`"><i class="fa fa-envelope"></i></a>
+                  <a :href="`https://gmail.com/${user.email}`"
+                    ><i class="fa fa-envelope"></i
+                  ></a>
                 </li>
                 <!-- <li>
                   <a href="#"><i class="fa fa-twitter"></i></a>
@@ -53,7 +66,9 @@
               </ul>
               <button class="btn draw-border">{{ $t('message') }}</button>
               <button class="btn draw-border">
-                <nuxt-link :to="localePath({path: `users/${user.id}`})">{{ $t('detail_all') }}</nuxt-link>
+                <nuxt-link :to="localePath({ path: `users/${user.id}` })">{{
+                  $t('detail_all')
+                }}</nuxt-link>
               </button>
             </div>
           </div>
@@ -72,8 +87,8 @@ export default {
   },
   mounted() {
     this.loading = true
-    this.$store.dispatch('users').then((resp)=>{
-    this.loading = false
+    this.$store.dispatch('users').then((resp) => {
+      this.loading = false
       resp.data
     })
   },
@@ -81,7 +96,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .main {
   display: grid;
   grid-template-columns: 300px 300px 300px;
